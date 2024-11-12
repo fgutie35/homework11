@@ -5,6 +5,7 @@ import useAPI from '@/composables/useAPI';
 import { faker } from '@faker-js/faker'
 
 const { fetchEmployee, currentEmployee } = useAPI()
+const route = useRoute()
 
 onMounted(async() => {
     await fetchEmployee(route.params.id)
@@ -14,7 +15,7 @@ onUnmounted(() => {
     currentEmployee.value = null
 })
 
-const route = useRoute()
+
 </script>
 
 <template>
